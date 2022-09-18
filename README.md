@@ -1,0 +1,2 @@
+### Slack permissions
+- channels:history
