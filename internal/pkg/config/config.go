@@ -9,13 +9,12 @@ type readerStruct struct {
 	envs map[string]string
 }
 
-type list struct {
+type List struct {
 	SlackAuthToken string
 }
 
-func Read(envFile ...string) *list {
+func Read(envFile ...string) List {
 	envs, err := godotenv.Read(envFile...)
-
 	if err != nil {
 		log.Fatal().Err(err)
 	}
@@ -24,8 +23,8 @@ func Read(envFile ...string) *list {
 		envs: envs,
 	}
 
-	return &list{
-		SlackAuthToken: reader.getString("SLACK_BOT_AUTH_TOKEN"),
+	return List{
+		reader.getString("SLACK_BOT_AUTH_TOKEN"),
 	}
 }
 
