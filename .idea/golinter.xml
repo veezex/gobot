@@ -90,7 +90,7 @@
         <option value="goimports" />
       </list>
     </option>
-    <option name="goLinterExe" value="$USER_HOME$/go/bin/golangci-lint" />
+    <option name="goLinterExe" value="/opt/homebrew/Cellar/golangci-lint/1.50.0/bin/golangci-lint" />
     <option name="linterSelected" value="true" />
   </component>
 </project>
