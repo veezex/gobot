@@ -10,7 +10,8 @@ type readerStruct struct {
 }
 
 type List struct {
-	SlackAuthToken string
+	SlackAuthToken    string
+	TelegramAuthToken string
 }
 
 func Read(envFile ...string) List {
@@ -24,7 +25,8 @@ func Read(envFile ...string) List {
 	}
 
 	return List{
-		reader.getString("SLACK_BOT_AUTH_TOKEN"),
+		SlackAuthToken:    reader.getString("SLACK_BOT_AUTH_TOKEN"),
+		TelegramAuthToken: reader.getString("TELEGRAM_BOT_AUTH_TOKEN"),
 	}
 }
 
