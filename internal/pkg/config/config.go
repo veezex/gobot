@@ -2,7 +2,7 @@ package config
 
 import (
 	"github.com/joho/godotenv"
-	"github.com/rs/zerolog/log"
+	zeroLog "github.com/rs/zerolog/log"
 )
 
 type readerStruct struct {
@@ -10,14 +10,15 @@ type readerStruct struct {
 }
 
 type List struct {
-	SlackAuthToken    string
+	SlackAppToken     string
+	SlackBotToken     string
 	TelegramAuthToken string
 }
 
 func Read(envFile ...string) List {
 	envs, err := godotenv.Read(envFile...)
 	if err != nil {
-		log.Fatal().Err(err)
+		zeroLog.Fatal().Err(err)
 	}
 
 	reader := &readerStruct{
@@ -25,7 +26,8 @@ func Read(envFile ...string) List {
 	}
 
 	return List{
-		SlackAuthToken:    reader.getString("SLACK_BOT_AUTH_TOKEN"),
+		SlackBotToken:     reader.getString("SLACK_BOT_AUTH_TOKEN"),
+		SlackAppToken:     reader.getString("SLACK_APP_TOKEN"),
 		TelegramAuthToken: reader.getString("TELEGRAM_BOT_AUTH_TOKEN"),
 	}
 }
@@ -33,7 +35,7 @@ func Read(envFile ...string) List {
 func (r *readerStruct) getString(key string) string {
 	result, ok := r.envs[key]
 	if !ok {
-		log.Fatal().Msgf("Undefined <%v> env variable", key)
+		zeroLog.Fatal().Msgf("Undefined <%v> env variable", key)
 	}
 
 	return result
