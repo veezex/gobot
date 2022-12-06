@@ -77,8 +77,9 @@ func (s *slack) Listen(ctx context.Context) (<-chan message.Message, error) {
 		err := s.client.Run()
 		if err != nil {
 			result <- message.Message{
-				Text: "",
-				Err:  err,
+				Author: "",
+				Text:   "",
+				Err:    err,
 			}
 		}
 	}()

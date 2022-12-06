@@ -1,6 +1,7 @@
 package message
 
 type Message struct {
-	Text string
-	Err  error
+	Author string
+	Text   string
+	Err    error
 }

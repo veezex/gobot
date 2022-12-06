@@ -13,6 +13,8 @@ type List struct {
 	SlackAppToken     string
 	SlackBotToken     string
 	TelegramAuthToken string
+	SlackEventsPath   string
+	SlackEventsPort   uint64
 }
 
 func Read(envFile ...string) List {
@@ -29,6 +31,8 @@ func Read(envFile ...string) List {
 		SlackBotToken:     reader.getString("SLACK_BOT_AUTH_TOKEN"),
 		SlackAppToken:     reader.getString("SLACK_APP_TOKEN"),
 		TelegramAuthToken: reader.getString("TELEGRAM_BOT_AUTH_TOKEN"),
+		SlackEventsPort:   3000,
+		SlackEventsPath:   "/slack/events",
 	}
 }
 
