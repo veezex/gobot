@@ -2,6 +2,10 @@
 run-bot:
 	go run ./cmd/bot
 
+.PHONY: build-bot
+build-bot:
+	go build ./cmd/bot
+
 .PHONY: format
 lint:
 	golangci-lint run
