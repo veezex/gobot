@@ -31,7 +31,7 @@ func New(secret string, opts EventOpts) *slack {
 	}
 }
 
-func (s *slack) Listen() (<-chan message.Message, error) {
+func (s *slack) Events() (<-chan message.Message, error) {
 	result := make(chan message.Message)
 
 	errNotify := func(err error) {
