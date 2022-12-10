@@ -14,7 +14,7 @@ func main() {
 	settings := config.Read(".env")
 
 	// t := telegram.New(settings.TelegramAuthToken)
-	s := slack.New(settings.SlackAppToken, slack.SlackEventsOps{
+	s := slack.New(settings.SlackAppToken, slack.EventOpts{
 		Path: settings.SlackEventsPath,
 		Port: settings.SlackEventsPort,
 	})

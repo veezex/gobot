@@ -18,15 +18,15 @@ import (
 
 type slack struct {
 	secret string
-	opts   SlackEventsOps
+	opts   EventOpts
 }
 
-type SlackEventsOps struct {
+type EventOpts struct {
 	Port uint64
 	Path string
 }
 
-func New(secret string, opts SlackEventsOps) *slack {
+func New(secret string, opts EventOpts) *slack {
 	return &slack{
 		secret: secret,
 		opts:   opts,
