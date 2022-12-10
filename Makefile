@@ -9,3 +9,8 @@ lint:
 .PHONY: format
 format:
 	gofumpt -l -w .
+
+.PHONY: update
+update:
+	go get -u ./...
+	go mod tidy

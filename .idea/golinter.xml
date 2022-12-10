@@ -14,7 +14,6 @@
         <option value="maintidx" />
         <option value="nestif" />
         <option value="grouper" />
-        <option value="wsl" />
         <option value="varnamelen" />
         <option value="asasalint" />
         <option value="exhaustive" />
@@ -90,7 +89,7 @@
         <option value="goimports" />
       </list>
     </option>
-    <option name="goLinterExe" value="/opt/homebrew/Cellar/golangci-lint/1.50.0/bin/golangci-lint" />
+    <option name="goLinterExe" value="/opt/homebrew/Cellar/golangci-lint/1.50.1/bin/golangci-lint" />
     <option name="linterSelected" value="true" />
   </component>
 </project>
